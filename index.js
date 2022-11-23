@@ -8,13 +8,14 @@ app.use(express.json())
 const mongo=require('./connect')
 mongo.connect()
 
-
 const cors=require('cors')
 app.use(cors())
 
 const StudentRouter=require('./Router/StudentRouter')
 const MentorRouter=require('./Router/MentorRouter')
-
+app.use('/',(req,res)=>{
+res.send("Welcome to the App")
+})
 app.use('/students',StudentRouter)
 app.use('/mentors',MentorRouter)
 
