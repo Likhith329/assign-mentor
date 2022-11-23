@@ -5,12 +5,12 @@ const mongo=require('./connect')
 mongo.connect()
 
 const cors=require('cors')
-
+app.use(cors())
 const express=require('express')
 const app=express()
 app.use(express.json())
 
-app.use(cors())
+
 
 const StudentRouter=require('./Router/StudentRouter')
 const MentorRouter=require('./Router/MentorRouter')
